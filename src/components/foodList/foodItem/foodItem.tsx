@@ -30,6 +30,8 @@ const FoodItem = ({ foodData }:FoodItemProps) => {
     .includes(foodData?.recipeId || 'null')
     ? <Favorite sx={{ color: red[900] }} /> : <FavoriteBorder sx={{ color: red[900] }} />;
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const cuisineTypePhoto = foodData
+    ? foodData?.cuisineType[0].slice(0, 1).toUpperCase() + foodData?.cuisineType[0].slice(1) : 'no Photo';
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -50,7 +52,7 @@ const FoodItem = ({ foodData }:FoodItemProps) => {
           <Tooltip title={`cuisine type - ${foodData?.cuisineType[0]}`} placement="left-start">
             <Avatar
               alt={foodData?.cuisineType[0]}
-              src={`https://desolate-forest-80876.herokuapp.com//${foodData?.cuisineType[0]}.png`}
+              src={`https://desolate-forest-80876.herokuapp.com//${cuisineTypePhoto}.png`}
               sx={{ width: 56, height: 56 }}
             />
           </Tooltip>
