@@ -4,7 +4,7 @@ import { IUserSignInData } from 'src/types/IUserSignInData';
 import { IUserSignUpData } from 'src/types/IUserSignUpData';
 
 const useAuthorizationServices = () => {
-  const _apiBase = 'https://desolate-forest-80876.herokuapp.com//auth';
+  const _apiBase = 'https://desolate-forest-80876.herokuapp.com/auth';
   const { request } = useHttp();
 
   const signInUser = async (data:IUserSignInData) => {
