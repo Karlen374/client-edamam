@@ -1,0 +1,26 @@
+.AppHeader{
+  padding:20px;
+  background-color: #26395d;
+  a{
+    text-decoration: none;
+  }
+  &_NavButtons{
+    display:flex;
+    justify-content: space-around;
+  }
+  &_Chip:hover{
+    color:rgb(51, 105, 51);
+    background-color: #fff;
+    border:1px solid rgb(51, 105, 51);
+    cursor:pointer;
+    & path{
+      color:rgb(51, 105, 51)
+    }
+  }
+  &_Error{
+    margin: 10px;
+  }
+  path{
+    color:#fff;
+  }
+}
