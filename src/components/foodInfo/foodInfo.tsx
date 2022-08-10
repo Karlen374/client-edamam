@@ -91,7 +91,14 @@ const FoodInfo = () => {
           <h4 className={styles.Food__Info_SubHeader}>
             Nutrition
             {' '}
-            <QuestionMarkIcon sx={{ width: 14, height: 1 }} />
+            <Tooltip
+              title={`
+              ${registeredUserData?.userGender} daily calorie intake for an ${registeredUserData?.userAge} year old 
+`}
+              placement="left-start"
+            >
+              <QuestionMarkIcon sx={{ width: 14, height: 1 }} />
+            </Tooltip>
           </h4>
           <div className={styles.Food__Info_Nutrition}>
             <p>
