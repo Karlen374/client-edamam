@@ -26,6 +26,8 @@ const FoodInfo = () => {
   const { registeredUserData } = useAppSelector((store) => store.authorization);
   const [dailyValue, setDailyValue] = useState<number>(0);
   const [serving, setServing] = useState<number>(1);
+  const cuisineTypePhoto = currentFoodData
+    ? currentFoodData?.cuisineType[0].slice(0, 1).toUpperCase() + currentFoodData?.cuisineType[0].slice(1) : 'no Photo';
   const likeIcon = registeredUserData?.likedFoodsData?.map((item:IRecipe) => item.recipeId)
     .includes(currentFoodData?.recipeId || 'null')
     ? <Favorite sx={{ color: red[900] }} /> : <FavoriteBorder sx={{ color: red[900] }} />;
@@ -83,7 +85,7 @@ const FoodInfo = () => {
         <Tooltip title={`cuisine type - ${currentFoodData?.cuisineType[0]}`} placement="left-start">
           <Avatar
             alt={currentFoodData?.cuisineType[0]}
-            src={`https://desolate-forest-80876.herokuapp.com//${currentFoodData?.cuisineType[0]}.png`}
+            src={`https://desolate-forest-80876.herokuapp.com//${cuisineTypePhoto}.png`}
             sx={{ width: 86, height: 86 }}
           />
         </Tooltip>
